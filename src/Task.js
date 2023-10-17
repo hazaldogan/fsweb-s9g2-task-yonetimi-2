@@ -11,7 +11,7 @@ const Task = ({ taskObj, onComplete }) => {
   const today = new Date();
   function getClassName(date) {
     const diff = differenceInDays(date, today);
-    return diff > 3 ? "normal" : "urgent";
+    return diff > 3 ? "normal" : "bg-[#ffd9d4]";
   }
   const bg = getClassName(deadlineInDate);
   return (
