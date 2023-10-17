@@ -16,11 +16,13 @@ const Task = ({ taskObj, onComplete }) => {
   const bg = getClassName(deadlineInDate);
   return (
     <div className="task">
-      <h3>{taskObj.title}</h3>
+      <h3 className="text-lg text-[#c8781a]">{taskObj.title}</h3>
       <div className="deadline">
         son teslim: <span className={bg}>{deadlineInText}</span>
       </div>
-      <p>{taskObj.description}</p>
+      <p className="pt-2 px-0 pb-3 text-sm color-[#444]">
+        {taskObj.description}
+      </p>
       <div>
         {taskObj.people.map((p) => (
           <span className="pill" key={p}>
@@ -29,7 +31,12 @@ const Task = ({ taskObj, onComplete }) => {
         ))}
       </div>
       {onComplete && (
-        <button onClick={() => onComplete(taskObj.id)}>Tamamlandı</button>
+        <button
+          className="block px-3 py-2 ml-auto bg-[#fecc91] shadow-md rounded border-0 cursor-pointer"
+          onClick={() => onComplete(taskObj.id)}
+        >
+          Tamamlandı
+        </button>
       )}
     </div>
   );
